@@ -1,16 +1,22 @@
 public class Ejercicio16 {
     public static void main(String[] args) {
-        System.out.print("Introduce un número que sea positivo y entero porfavor: ");
-        int numero = Integer.parseInt(System.console().readLine());
-        int numero1 = numero + 1 ;
-        int aux;
-        for (int i = numero; i <100;i++){
-            aux = numero;
-            numero = numero1;
-            numero1 = aux+numero1;
-
-        System.out.print(" "+numero1);
-        
+        System.out.print("Introduce un número: ");
+        int num = Integer.parseInt(System.console().readLine());
+        boolean esPrimo = true;
+        if(num < 2){
+            System.out.print("Un número menor que 2 no puede ser primo, introduzca otro número.");
+        }
+        else{
+            for(int i=2;i<num;i++){
+            if ((num % i)==0){
+            esPrimo = false;
+                }
+            }
+            if (esPrimo){
+            System.out.print("El número introducido es primo. ");
+            }else{
+            System.out.print("El número introducido no es primo;");
+            }
         }
     }
 }

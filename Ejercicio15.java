@@ -1,22 +1,20 @@
 public class Ejercicio15 {
     public static void main(String[] args) {
-        System.out.print("Introduce un número: ");
-        int num = Integer.parseInt(System.console().readLine());
-        boolean esPrimo = true;
-        if(num < 2){
-            System.out.print("Un número menor que 2 no puede ser primo, introduzca otro número.");
+        System.out.print("Introduce la base de un número: ");
+        int base = Integer.parseInt(System.console().readLine());
+        System.out.print("Introduce un exponente: ");
+        int exponente = Integer.parseInt(System.console().readLine());
+        double potencia = 1;
+        if (exponente == 0 ){
+            System.out.print("Todo numero elevado a 0 es = a 1");
         }
-        else{
-            for(int i=2;i<num;i++){
-            if ((num % i)==0){
-            esPrimo = false;
-                }
-            }
-            if (esPrimo){
-            System.out.print("El número introducido es primo. ");
-            }else{
-            System.out.print("El número introducido no es primo;");
+        if (exponente != 0){ 
+            for (int i = 0; i<exponente;i++){
+            potencia*=base;
             }
         }
+        System.out.println(base +"^" + exponente+ "="+potencia);
+        
+
     }
 }
